@@ -1,7 +1,7 @@
 US Boundaries
 ================
 
-This repo is to create scripts to turn US Census Bureau shapefiles into R objects for composite maps of the US, with insets for Alaska and Hawaii.
+This repo is to create scripts to turn US Census Bureau shapefiles into R sp objects for the 48 contiguous US states.
 
 The US Census Bureau cartographic shapefiles are available here
 
@@ -20,17 +20,8 @@ In addition to counties and states, we will create boundary files for commuting 
 
 We will store the data in the WGS 84, EPSG:4326 ([epsg.io](https://epsg.io/4326)) coordinate reference system.
 
-We will create the R objects in two formats: sp and sf.
-
-Our naming convention is `cb_year_us_region_resolution_format.rds` where
+Our naming convention is `cb_year_us_region_resolution.rds` where
 
 -   year = 2015
 -   region = county, cz, state
 -   resolution = 500k, 5m, 20m
--   format = sp, sf
-
-Relevant documents
-
--   [AlbersUSA inverse proj parameters](https://bl.ocks.org/Fil/7723167596af40d9159be34ffbf8d36b)
-    -   Algorithm used by d3.geo.albersUsa
-    -   May be hard to implement with maptools
