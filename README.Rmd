@@ -37,6 +37,9 @@ commuting zones as specified in this Excel spreadsheet
 * [1980 and 1990 commuting zones and labor market
 areas](https://www.ers.usda.gov/webdocs/DataFiles/Commuting_Zones_and_Labor_Market_Areas__17970/czlma903.xls?v=40961)
 
+We will store the data in the WGS 84, EPSG:4326
+([epsg.io](https://epsg.io/4326)) coordinate reference system.
+
 We will create the R objects in two formats: sp and sf.
 
 Our naming convention is `cb_year_us_region_resolution_format.rds` where
