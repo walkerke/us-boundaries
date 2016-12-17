@@ -28,3 +28,9 @@ Our naming convention is `cb_year_us_region_resolution_format.rds` where
 -   region = county, cz, state
 -   resolution = 500k, 5m, 20m
 -   format = sp, sf
+
+Relevant documents
+
+-   [AlbersUSA inverse proj parameters](https://bl.ocks.org/Fil/7723167596af40d9159be34ffbf8d36b)
+    -   Algorithm used by d3.geo.albersUsa
+    -   May be hard to implement with maptools
