@@ -20,8 +20,9 @@ In addition to counties and states, we will create boundary files for commuting 
 
 We will store the data in the WGS 84, EPSG:4326 ([epsg.io](https://epsg.io/4326)) coordinate reference system.
 
-Our naming convention is `cb_year_us_region_resolution.rds` where
+Our naming convention is `cb_year_states_region_resolution.rds` where
 
 -   year = 2015
+-   states = contig, alaska, hawaii
 -   region = county, cz, state
 -   resolution = 500k, 5m, 20m
