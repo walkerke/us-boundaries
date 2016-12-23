@@ -14,25 +14,25 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
 
-This repo is to create scripts to turn US Census Bureau shapefiles into R sp
-objects for US counties and states. 
+Boundaries of US counties, commuting zones, and states in R sf and sp formats.
 
-The US Census Bureau cartographic shapefiles are available here
+Source US Census Bureau cartographic shapefiles
 
 * [County](https://www.census.gov/geo/maps-data/data/cbf/cbf_counties.html)
 * [State](https://www.census.gov/geo/maps-data/data/cbf/cbf_state.html)
 
-Each has boundary files in three resolutions
+Boundary files are provided in three resolutions
 
 * 500k = 1:500,000
 * 5m = 1:5,000,000
 * 20m = 1:20,000,000
 
-We will store the data in the WGS 84, EPSG:4326
-([epsg.io](https://epsg.io/4326)) coordinate reference system.
+Boundary files use the WGS 84, EPSG:4326 ([epsg.io](https://epsg.io/4326))
+coordinate reference system.
 
-Our naming convention is `cb_year_us_region_resolution.rds` where
+Boundary file naming convention: `cb_year_us_region_resolution_format.rds` where
 
 * year = 2015
 * region = county, state
 * resolution = 500k, 5m, 20m
+* format = sf, sp
