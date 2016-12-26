@@ -45,7 +45,7 @@ if (!file.exists(tmp)) {
 dest <- str_c(tmp, "co99_d90_shp.zip")
 layer <- "co99_d90"
 if (download.file(url = url_cb, destfile = dest, quiet = TRUE)) {
-  stop("Error: Download failed")
+  stop("Error: Shapefile download failed")
 }
 unzip(zipfile = dest, exdir = str_c(tmp, layer, "/"))
 
@@ -83,7 +83,7 @@ us <- SpatialPolygonsDataFrame(Sr = us_sp, data = us_df)
 # Download commuting zones county partition
 dest <- str_c(tmp, "czlma903.xls")
 if (download.file(url = url_cz, destfile = dest, quiet = TRUE)) {
-  stop("Error: Download failed")
+  stop("Error: Commuting zones download failed")
 }
 
 # Read commuting zone county partition, add place and state variables
