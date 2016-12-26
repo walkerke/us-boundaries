@@ -24,7 +24,7 @@ proj4_wgs84 <- "+proj=longlat +datum=WGS84 +no_defs"
 tmp <- str_c("/tmp/", Sys.time() %>% as.integer(), "/")
   # URL for US Census Bureau shapefile
 url_cb <- "http://www2.census.gov/geo/tiger/PREVGENZ/co/co90shp/co99_d90_shp.zip"
-  # URL for commuting zone data
+  # URL for commuting zone county partition
 url_cz <- "https://www.ers.usda.gov/webdocs/DataFiles/Commuting_Zones_and_Labor_Market_Areas__17970/czlma903.xls"
   # Output file
 file_out <- "../data/cb_1990_us_cz_sp.rds"
