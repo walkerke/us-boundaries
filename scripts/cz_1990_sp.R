@@ -2,7 +2,7 @@
 # Bureau shapefiles
 
 # The code below follows the example code in:
-# Bivard R. Combining Spatial Data. 2016-11-15.
+# Bivand R. Combining Spatial Data. 2016-11-15.
 # https://cran.r-project.org/web/packages/maptools/vignettes/combine_maptools.pdf
 
 # Authors: Claudia Engel and Bill Behrman
