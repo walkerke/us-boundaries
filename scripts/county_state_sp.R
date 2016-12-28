@@ -16,7 +16,7 @@ year <- "2015"
 regions <- c("county", "state")
   # Boundary resolutions
 resolutions <- c("500k", "5m", "20m")
-  # PROJ.4 string for WGS 84 coordinate reference system
+  # PROJ.4 string for WGS84 coordinate reference system
 proj4_wgs84 <- "+proj=longlat +datum=WGS84 +no_defs"
   # FIPS codes for US states and District of Columbia
 fips_states <- c(
@@ -56,7 +56,7 @@ for (region in regions) {
     unzip(zipfile = dest, exdir = str_c(tmp, boundary, "/"))
     
     # Read shapefile into sp object, subset to states and District of
-    # Columbia, convert to WGS 84 coordinate reference system, and write out
+    # Columbia, convert to WGS84 coordinate reference system, and write out
     readOGR(dsn = str_c(tmp, boundary, "/", boundary, ".shp"),
             layer = boundary, stringsAsFactors = FALSE) %>%
       subset(STATEFP %in% fips_states) %>% 
