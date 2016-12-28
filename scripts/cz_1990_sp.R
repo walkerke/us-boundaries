@@ -16,9 +16,9 @@ library(maptools)
 library(stringr)
 
 # Parameters
-  # PROJ.4 string for NAD 27 coordinate reference system
+  # PROJ.4 string for NAD27 coordinate reference system
 proj4_nad27 <- "+proj=longlat +datum=NAD27 +no_defs"
-  # PROJ.4 string for WGS 84 coordinate reference system
+  # PROJ.4 string for WGS84 coordinate reference system
 proj4_wgs84 <- "+proj=longlat +datum=WGS84 +no_defs"
   # Temporary directory
 tmp <- str_c("/tmp/", Sys.time() %>% as.integer(), "/")
@@ -53,7 +53,7 @@ unzip(zipfile = dest, exdir = str_c(tmp, layer, "/"))
 us <- readOGR(dsn = str_c(tmp, layer, "/", layer, ".shp"),
               layer = layer, stringsAsFactors = FALSE)
 
-# Set coordinate reference system to NAD 27
+# Set coordinate reference system to NAD27
 proj4string(us) <- CRS(proj4_nad27)
 
 # Create variable for FIPS county code
@@ -117,7 +117,7 @@ us_df <-
 row.names(us_df) <- us_df$cz_1990
 us <- SpatialPolygonsDataFrame(Sr = us_sp, data = us_df)
 
-# Convert to WGS 84 coordinate reference system and write out
+# Convert to WGS84 coordinate reference system and write out
 us %>% 
   spTransform(CRSobj = CRS(proj4_wgs84)) %>% 
   write_rds(file_out)
