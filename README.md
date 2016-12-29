@@ -1,7 +1,7 @@
 US Boundaries
 ================
 
-Boundaries of US counties, commuting zones, and states in R sp format.
+Boundaries of US counties, commuting zones, and states in R sf and sp formats.
 
 County and state boundaries are provided in three resolutions
 
@@ -16,9 +16,9 @@ The county and state boundary files have this naming convention: `cb_year_us_reg
 -   year = 2015
 -   region = county, state
 -   resolution = 500k, 5m, 20m
--   format = sp
+-   format = sf, sp
 
 The commuting zone boundary files have this naming convention: `cb_year_us_cz_format.rds` where
 
 -   year = 1990
--   format = sp
+-   format = sf, sp
