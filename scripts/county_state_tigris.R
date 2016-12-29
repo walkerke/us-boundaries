@@ -27,12 +27,12 @@ fips_states <- c(
 
 # By default, tigris creates a cache directory on the user's computer 
 # so that data don't have to be re-downloaded in future sessions.  To mirror 
-# your code below, this behavior can be turned off with the following line
-# of code: 
-options(tigris_use_cache = FALSE)
+# your code below, this behavior can be turned off by uncommenting
+# the following line of code: 
 
-# Then, downloading to a temporary directory is already built-in.  tigris currently
-# defaults to the 2015 shapefiles.  
+# options(tigris_use_cache = FALSE)
+
+# tigris currently defaults to the 2015 shapefiles.  
 for (region in regions) {
   for (resolution in resolutions) {
     if (region == "state") {
