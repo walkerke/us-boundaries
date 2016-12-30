@@ -11,7 +11,7 @@ Boundaries are provided in three resolutions
 
 Boundaries use the WGS 84, EPSG:4326 ([epsg.io](https://epsg.io/4326)) coordinate reference system.
 
-Boundary files have this naming convention: `cb_year_us_region_resolution_format.rds` where
+Boundary files use this naming convention: `cb_year_us_region_resolution_format.rds` where
 
 -   year = 2015
 -   region = county, cz, state
