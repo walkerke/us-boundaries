@@ -99,8 +99,7 @@ v <-
   left_join(cz %>% select(-fips_county) %>% distinct(), by = "cz_1990")
 cz <- 
   bind_rows(cz, v) %>% 
-  filter(!(fips_county %in% counties_deleted)) %>% 
-  arrange(cz_1990, fips_county)
+  filter(!(fips_county %in% counties_deleted))
   
 # For resolution
 for (resolution in resolutions) {
