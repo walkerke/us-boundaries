@@ -120,13 +120,14 @@ for (resolution in resolutions) {
   }
   unzip(zipfile = dest, exdir = str_c(tmp, boundary))
   
-  # Read shapefile into sp object and subset to states and District of Columbia
+  # Read shapefile into sf object and subset to states and District of Columbia
   us <- 
     st_read(dsn = str_c(tmp, boundary, "/", boundary, ".shp"),
             layer = boundary, stringsAsFactors = FALSE) %>%
     subset(STATEFP %in% fips_states) %>%
     mutate(fips_county = GEOID)
   
+  # Generate the commuting zones in a pipeline
   zones <- us %>%
     left_join(cz, by = c("GEOID" = "fips_county")) %>%
     st_as_sf() %>% # Coerce back to sf object; left_join was converting to data.frame
@@ -135,7 +136,7 @@ for (resolution in resolutions) {
     st_transform(4326) %>% # transform to WGS 1984
     st_cast("MULTIPOLYGON") # allows for coercion to sp object (was mixing POLYGON and MULTIPOLYGON)
   
-  # Convert to WGS84 coordinate reference system and write out
+  # Write out
   zones %>% 
     write_rds(str_c(dir_data, "cb_", year, "_us_cz_", resolution, "_sf.rds"))
 }
