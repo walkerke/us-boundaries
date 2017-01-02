@@ -124,8 +124,7 @@ for (resolution in resolutions) {
   us <- 
     st_read(dsn = str_c(tmp, boundary, "/", boundary, ".shp"),
             layer = boundary, stringsAsFactors = FALSE) %>%
-    subset(STATEFP %in% fips_states) %>%
-    mutate(fips_county = GEOID)
+    subset(STATEFP %in% fips_states)
   
   # Generate the commuting zones in a pipeline
   zones <- us %>%
